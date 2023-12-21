@@ -9,6 +9,7 @@ export default function SignUp() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+  console.log(formData)
 
   const handleSubmit = async (e) => {
     // Prevent the default form submission behavior
@@ -28,7 +29,7 @@ export default function SignUp() {
       });
       // Parse the JSON response
       const data = await res.json();
-      // console.log(data);
+      console.log(data);
       setLoading(false);
       if (data.success === false) {
         setError(true);
